@@ -1,0 +1,16 @@
+<html lang="en">
+<head>
+  <%- include ('partials/head.ejs') %>
+  <title>Show</title>
+</head>
+<body>
+  <%=painting.title%> <br>
+  <%=painting.author%> <br>
+  <%=painting.year%> <br>
+  <a href="/paintings/<%=painting.id%>">
+      <img src="<%=painting.imageURL%>" alt=""> 
+  </a><br>
+  <%=painting.body%>
+          
+</body>
+</html>
