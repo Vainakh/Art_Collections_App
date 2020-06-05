@@ -13,4 +13,11 @@ const paintingSchema = new mongoose.Schema(
 
 const Painting = mongoose.model('Painting', paintingSchema)
 
-module.exports = Painting
+const Statues = mongoose.model("Statues", paintingSchema)
+
+
+
+module.exports = {
+  Painting,
+  Statues
+}

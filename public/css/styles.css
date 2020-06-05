@@ -1,0 +1,220 @@
+body {
+  background-color:black;
+  /* background-image: linear-gradient(to right bottom, rgba(8, 8, 8, 0.954), rgba(158, 2, 2, 0.95)); */
+}
+
+/* home page */
+
+.home-title {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  /* margin-top: 30%; */
+  color: white;
+  font-size: 30px;
+  font-family: 'Rock Salt', cursive;
+  /* text-align: center; */
+}
+
+.home-title-link {
+  position: absolute;
+  text-decoration: none;
+  top: 45%;
+  left: 45%;
+  color: white;
+  font-family: 'Rock Salt', cursive;
+}
+
+.home-title-link-two {
+  position: absolute;
+  text-decoration: none;
+  top: 49%;
+  left: 45%;
+  color: white;
+  font-family: 'Rock Salt', cursive;
+}
+}
+
+.home-title-span {
+  font-family: 'Dawning of a New Day', cursive;
+  color: red;
+  font-size: 30px;
+  
+}
+
+
+/* // */
+
+.container-holder {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+img {
+  max-width: 100%;
+  display: flex;
+  min-height: 400px;
+ 
+}
+
+
+/* .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+ 
+  max-width: 550px;
+  max-height: 400px;
+} */
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin: 50px;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 500;
+}
+
+
+/* //index */
+
+.painting-title {
+  color: gold;
+  font-size: 15px;
+  font-family: 'Cinzel', serif;
+}
+
+.painting-details {
+  color: gold;
+}
+
+
+
+.painting-author {
+  
+}
+.painting-year {
+
+}
+
+
+.show-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-img {
+  float: left;
+}
+
+.painting-body {
+  color: white;
+  font-family: 'Rock Salt', cursive;
+}
+
+
+
+
+
+/* carousel  */
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  /* position: relative; */
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  
+  max-height: 400px;
+  width: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Container for image text */
+
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.index-image {
+  display: flex;
+  justify-content: center;
+  /* width: auto; */
+}
+
+.image {
+  width: 450px;
+  height: auto;
+}
+
+
+
+

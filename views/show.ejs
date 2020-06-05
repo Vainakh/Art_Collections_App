@@ -4,13 +4,26 @@
   <title>Show</title>
 </head>
 <body>
-  <%=painting.title%> <br>
-  <%=painting.author%> <br>
-  <%=painting.year%> <br>
-  <a href="/paintings/<%=painting.id%>">
-      <img src="<%=painting.imageURL%>" alt=""> 
-  </a><br>
-  <%=painting.body%>
+  <div class="show-info">
+    <div>
+      <%=painting.title%> <br>
+      <%=painting.author%> <br>
+      <%=painting.year%> <br>
+    <a href="/paintings/<%=painting.id%>">
+      <img class="show-img" src="<%=painting.imageURL%>" alt=""> 
+    </a><br>
+    </div>
+    <br>
+    <div>
+      <span class="painting-body"><%=painting.body%></span> 
+    </div>
+   
+  </div>
+  
+  <form action="/paintings/<%=painting.id%>?_method=DELETE" method="POST">
+    <input type="submit" value="DELETE"/>
+</form>
+<a href="/paintings/<%=painting.id%>/edit">Edit</a>
           
 </body>
 </html>

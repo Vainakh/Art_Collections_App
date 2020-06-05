@@ -7,7 +7,10 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 require("dotenv").config()
-const Painting = require("./models/paintings");
+const {
+  Painting,
+  Statues 
+} = require("./models/paintings")
 //___________________
 //Port
 //___________________
@@ -36,7 +39,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //___________________
 
 //use public folder for static assets
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
@@ -74,12 +77,28 @@ app.get("/paintings", (req, res) => {
   Painting.find((error, data) => {
     
     if(error){
-      console.painting(error)
+      console.log(error)
     } else {
       res.render(
         "index.ejs",
         {
           paintings:data
+        }
+      )
+    }
+  })
+});
+
+app.get("/statues", (req, res) => {
+  Statues.find((error, data) => {
+    
+    if(error){
+      console.log(error)
+    } else {
+      res.render(
+        "statues.ejs",
+        {
+          statues:data
         }
       )
     }
@@ -172,11 +191,11 @@ app.get("/paintings/:id", (req, res) => {
 //   const newPaintings =
 //     [
 //         {
-//           title: "Water Lillies",
-//           author: "Claude Monet",
-//           year: 1896,
-//           imageURL: "https://learnodo-newtonic.com/wp-content/uploads/2013/07/Water-Lilies-Nympheas.5-by-Claude-Monet.jpg",
-//           body: "Impressionism was one of the most influential movements in modern art. Its artists focused on capturing the momentary effect of a scene rather than accurately depicting it. The “Nympheas” or Water Lilies series of Claude Monet has been described as “The Sistine Chapel of Impressionism”. It consists of approximately 250 oil paintings which were created by Monet during the last 30 years of his life. They are now on display in museums all around the world. The dazzling complexity of color and light in the panels opens the viewer’s eyes to the incredible diversity of nature and to the depth and mystery of the life it sustains. An amazing thing about these works is that Monet’s eyesight was badly deteriorating due to cataract while he painted most of these masterpieces. Claude Monet’s water-lily paintings are among the most recognized and celebrated works of 20th Century art and they perhaps the most famous flower paintings of all time."
+//           title: "Still Life with Flowers",
+//           author: "Ambrosius Bosschaert",
+//           year: 1617,
+//           imageURL: "  https://mymodernmet.com/wp/wp-content/uploads/2019/03/famous-flower-paintings-2.jpg",
+//           body: "Believe it or not, still-life painting was once considered a lesser form of art, as the elite favored religious and historical paintings. This slowly began to change through the 16th and 17th centuries, with the Dutch leading the way. The city of Antwerp was particularly important, as artists here began painting monumental size still-life paintings, which often featured flowers. Ambrosius Bosschaert was a Dutch still-life artist known for his love of painting bouquets of flowers with near scientific accuracy. A love for flowers ran so deep in his family that all three of his sons later became flower painters. Bosschaert’s flower paintings show symmetrically displayed blooms and he was one of the first painters to focus on painting bouquets. Clearly, his work sparked a trend that has lasted throughout art history."
 //         } 
 //     ]
 
