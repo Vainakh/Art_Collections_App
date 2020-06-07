@@ -79,12 +79,13 @@ app.get("/paintings/:id/edit", (req, res) => {
   console.log("Goodbuy!")
   const id = req.params.id
   console.log(id)
-  res.render("edit.ejs",
+  res.render("editPaintings.ejs",
     {
       painting: id
     }
   );
 });
+
 
 app.put('/paintings/:id/edit', (req, res) => {
   console.log("Hello World")
@@ -94,6 +95,27 @@ app.put('/paintings/:id/edit', (req, res) => {
       res.redirect("/paintings")
    })
  });
+
+app.put('/abstracts/:id/edit', (req, res) => {
+  console.log("Hello World")
+  Abstruct.findByIdAndUpdate(req.params.id, req.body, (err, painting) => {
+    console.log(err)
+      //  res.redirect('/abstracts')
+      res.redirect("/abstracts")
+   })
+ });
+
+ app.get("/abstracts/:id/edit", (req, res) => {
+  console.log("Goodbuy!")
+  const id = req.params.id
+  console.log(id)
+  res.render("editAbstracts.ejs",
+    {
+      abstract: id
+    }
+  );
+});
+
 
 // 2 index/show route paintings
 app.get("/paintings", (req, res) => {

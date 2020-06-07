@@ -23,8 +23,6 @@ body {
   /* border: 3px solid red; */
 }
 
-
-
 .home-title-link-one {
   position: absolute;
   text-decoration: none;
@@ -372,15 +370,16 @@ img {
 
 .show-page-link {
   color: white;
-  border: 3px solid white;
-  width: 150px;
-  height: 30px;
+  /* border: 3px solid white; */
+  width: 200px;
+  height: 40px;
   position: absolute;
   top: 900px;
   left: 1450px;
   text-decoration: none;
   text-align: center;
   padding-top: 4px;
+  font-family: 'Rock Salt', cursive;
 }
 
 .show-page-btns {
@@ -433,3 +432,31 @@ img {
     -1px 1px 10px #bbb;
 }
 
+
+/* //edit from */
+
+.edit-form {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  margin: 0 auto;
+  font-family: 'Rock Salt', cursive;
+}
+
+.edit-form input {
+  padding: 10px;
+}
+
+.edit-btn {
+  font-family: 'Rock Salt', cursive;
+  width: 110px;
+  height: 53px;
+  text-align: center;
+  border: 3px solid red;
+  text-decoration: none;
+  font-size: 15px;
+  padding-top: 3px;
+  color:red;
+}
