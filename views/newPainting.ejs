@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <%- include ('partials/head.ejs') %>
+    <title>New Painting Page</title>
+  </head>
+    <body class="new-page-body">
+      <div class="new-page-container">
+        <div class="new-page-sidebar"></div>
+        <h1 class="new-page-title">New Painting Page</h1>
+        <form action="/paintings/new/create" method="POST">
+          Title: <input class="new-form-title" type="text" name="title"/><br/>
+          Author: <input class="new-form-author" type="text" name="author" /><br/>
+          Year: <input class="new-form-year" type="number" name="year" /><br/>
+          ImageURL: <input class="new-form-image" type="url" name="imageURL" /></br>
+          Body: <textarea class="new-form-body" name="description" cols="30" rows="10"></textarea><br/>
+          <input class="new-form-submit" type="submit" value="Submit">
+        </form>
+      </div>
+      
+    </body>
+</html>
+
+<!-- {
+  title: { type: String },
+  author: { type: String },
+  year: { type: Number},
+  imageURL: { type: String },
+  body: { type: String}
+  } -->
+
+
+
+

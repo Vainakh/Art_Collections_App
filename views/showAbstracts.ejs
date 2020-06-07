@@ -24,14 +24,15 @@
         <span class="show-painting-body"><%=abstract.body%></span> 
       </div>
       
-     
-  
-        <form action="/abstracts/<%=abstract.id%>?_method=DELETE" method="POST">
-          <input type="submit" value="DELETE"/>
+      <div class="show-page-btns">
+      <form  action="/abstracts/delete/<%=abstract.id; %>" method="POST">
+        <button class="delete-painting-btn" type="submit">Delete</button>
       </form>
-      <a href="/abstracts/<%=abstract.id%>/edit">Edit</a>
+        
+      <a class="edit-painting-btn" href="/abstracts/<%=abstract.id%>/edit">Edit</a>
+      </div>
     </div>
-    <a class="show-page-link" href="/abstracts">Back to Abstracts</a>
+    <a class="show-page-link" href="/">Back to Abstracts</a>
   </div>
   
   

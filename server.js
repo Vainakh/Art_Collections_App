@@ -72,6 +72,29 @@ app.get("/", (req, res) => {
 //   });
 // });
 
+
+
+// 7 put/edit paintings route
+app.get("/paintings/:id/edit", (req, res) => {
+  console.log("Goodbuy!")
+  const id = req.params.id
+  console.log(id)
+  res.render("edit.ejs",
+    {
+      painting: id
+    }
+  );
+});
+
+app.put('/paintings/:id/edit', (req, res) => {
+  console.log("Hello World")
+  Painting.findByIdAndUpdate(req.params.id, req.body, (err, painting) => {
+    console.log(err)
+      //  res.redirect('/paintings')
+      res.redirect("/paintings")
+   })
+ });
+
 // 2 index/show route paintings
 app.get("/paintings", (req, res) => {
   Painting.find((error, data) => {
@@ -88,6 +111,8 @@ app.get("/paintings", (req, res) => {
     }
   })
 });
+
+
 
 //2 index/show route abstracts
 app.get("/abstracts", (req, res) => {
@@ -106,7 +131,10 @@ app.get("/abstracts", (req, res) => {
   })
 });
 
-
+app.get("/paintings/new", (req, res) => {
+  console.log("Hello World!")
+  res.render("newPainting.ejs")
+});
 
 //3 new route paintings
 app.get("/paintings/new", (req, res) => {
@@ -124,6 +152,8 @@ app.get("/paintings/:id", (req, res) => {
   });
 });
 
+
+
 //4 new route abstracts
 app.get("/abstracts/new", (req, res) => {
   res.render("new.ejs");
@@ -140,40 +170,32 @@ app.get("/abstracts/:id", (req, res) => {
   });
 });
 
-//7 put route
-// app.put('/logs/:id', (req, res) => {
-  
-//  Log.findByIdAndUpdate(req.params.id, req.body, (err, updatedModel) => {
-//       res.redirect('/logs')
-//   })
-// });
 
 
 
-//4 create route
-// app.post("/logs/new/create", (req, res) => {
-//   // console.log(req.body)
-//   if (req.body.shipIsBroken === "on") {
-//     req.body.shipIsBroken = true
-//   } else {
-//     req.body.shipIsBroken = false
-//   }
-//   Log.create(req.body, (error, data) => {
-//     console.log(error)
-//     res.redirect("/logs/")
-//   })
-// });
 
-//5 delete route
-// app.post("/logs/delete/:id", (req, res) => {
-//   console.log(req.params.id)
-//   Log.findByIdAndRemove( req.params.id, (err, log) => {
-//     if(err){
-//       console.log(err)
-//     } 
-//     res.redirect("/logs");
-//   })
-// });
+// 4 create painting route
+
+
+app.post("/paintings/new/create", (req, res) => {
+  // console.log(req.body)
+  Painting.create(req.body, (error, data) => {
+    console.log(error)
+    res.render("newPainting.ejs")
+    // res.redirect("/paintings/")
+  })
+});
+
+//5 delete painting route
+app.post("/paintings/delete/:id", (req, res) => {
+  console.log(req.params.id)
+  Painting.findByIdAndRemove( req.params.id, (err, painting) => {
+    if(err){
+      console.log(err)
+    } 
+    res.redirect("/paintings");
+  })
+});
 
 // seed many
 

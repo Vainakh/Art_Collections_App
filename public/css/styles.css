@@ -23,6 +23,8 @@ body {
   /* border: 3px solid red; */
 }
 
+
+
 .home-title-link-one {
   position: absolute;
   text-decoration: none;
@@ -111,16 +113,17 @@ body {
 .home-title-span {
   font-family: 'Dawning of a New Day', cursive;
   color: red;
-  font-size: 90px;
+  font-size: 120px;
+ 
 }
 
-/* .homepage-hr {
+.homepage-hr {
   position: absolute;
-  top: 350px;
+  top: 120px;
   border: 1px solid red;
-  width: 90%;
-  margin-left: 5%;
-} */
+  width: 70%;
+  margin-left: 20%;
+}
 
 .titles-container {
   position: absolute;
@@ -131,9 +134,18 @@ body {
   height: 400px;
 }
 
-nav {
+.titles-container-second {
   position: absolute;
-  top: 950px;
+  top: 50px;
+  left: 70px;
+  background-color: yellow;
+  width: 250px;
+  height: 250px;
+}
+
+.homepage-nav {
+  position: absolute;
+  top: 50px;
   left: 1400px;
   color: red;
   font-size: 20px;
@@ -312,6 +324,14 @@ img {
   height: auto;
 }
 
+.create-new-painting-btn {
+
+  padding: 10px 30px;
+  font-family: 'Rock Salt', cursive;
+  background-color: red;
+
+}
+
 
 /* //show paintings page */
 
@@ -332,6 +352,7 @@ img {
   flex-wrap: wrap;
   max-height: 400px;
   width: auto; */
+  background: url("https://www.freepik.com/free-photos-vectors/background");
 }
 
 .show-painting-body {
@@ -351,4 +372,64 @@ img {
 
 .show-page-link {
   color: white;
+  border: 3px solid white;
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  top: 900px;
+  left: 1450px;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 4px;
 }
+
+.show-page-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-evenly;
+  margin: 50px;
+}
+
+.delete-painting-btn {
+  padding: 10px 30px;
+  font-family: 'Rock Salt', cursive;
+  background-color: black;
+  border: 3px solid red;
+  color: red;
+}
+
+.edit-painting-btn {
+  /* padding: 5px 30px; */
+  font-family: 'Rock Salt', cursive;
+  width: 110px;
+  height: 53px;
+  text-align: center;
+  border: 3px solid red;
+  text-decoration: none;
+  font-size: 15px;
+  padding-top: 3px;
+  color:red;
+}
+
+
+/* // new page */
+
+.new-page-body {
+  background-color:black;
+}
+
+.new-page-container {
+  background-color: white;
+  width: 60vw;
+  height: 40vw;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #bbb, -1px -1px 10px #bbb, 1px -1px 10px #bbb,
+    -1px 1px 10px #bbb;
+}
+
