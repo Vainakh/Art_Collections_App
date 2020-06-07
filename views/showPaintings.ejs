@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+  <%- include ('partials/head.ejs') %>
+  <title>Show</title>
+</head>
+<body>
+  <div class="show-container">
+    <div class="show-info">
+      
+        <!-- <%=painting.title%> <br>
+        <%=painting.author%> <br>
+        <%=painting.year%> <br> -->
+     
+     
+  
+      <!-- <a href="/paintings/<%=painting.id%>">
+        <img class="show-img" src="<%=painting.imageURL%>" alt=""> 
+      </a><br> -->
+     
+  
+      <br>
+  
+      <div class="show-body-container">
+        <span class="show-painting-body"><%=painting.body%></span> 
+      </div>
+      
+     
+  
+        <form action="/paintings/<%=painting.id%>?_method=DELETE" method="POST">
+          <input type="submit" value="DELETE"/>
+      </form>
+      <a href="/paintings/<%=painting.id%>/edit">Edit</a>
+    </div>
+    <a class="show-page-link" href="/paintings">Back to Paintings</a>
+  </div>
+  
+  
+          
+</body>
+</html>

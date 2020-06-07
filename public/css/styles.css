@@ -1,62 +1,170 @@
 body {
   background-color:black;
-  /* background-image: linear-gradient(to right bottom, rgba(8, 8, 8, 0.954), rgba(158, 2, 2, 0.95)); */
 }
 
 /* home page */
+
+.home-collections {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  color: red;
+  font-size: 40px;
+  font-family: 'Rock Salt', cursive;
+}
 
 .home-title {
   position: absolute;
   top: 5%;
   left: 5%;
-  /* margin-top: 30%; */
   color: white;
-  font-size: 30px;
+  font-size: 70px;
   font-family: 'Rock Salt', cursive;
-  /* text-align: center; */
+  /* border: 3px solid red; */
 }
 
-.home-title-link {
+.home-title-link-one {
   position: absolute;
   text-decoration: none;
   top: 45%;
-  left: 45%;
+  left: 50%;
   color: white;
+  font-size: 25px;
   font-family: 'Rock Salt', cursive;
+}
+
+.home-title-link-one:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  color: black;
+}
+
+#parent:hover + .parent-highlight {
+  color: white;
 }
 
 .home-title-link-two {
   position: absolute;
   text-decoration: none;
-  top: 49%;
-  left: 45%;
+  top: 50%;
+  left: 50%;
   color: white;
+  font-size: 25px;
   font-family: 'Rock Salt', cursive;
 }
+
+.home-title-link-two:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  color: black;
 }
+
+.home-title-link-three {
+  position: absolute;
+  text-decoration: none;
+  top: 55%;
+  left: 50%;
+  color: white;
+  font-size: 25px;
+  font-family: 'Rock Salt', cursive;
+}
+
+.home-title-link-three:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  color: black;
+}
+
+.home-title-link-four {
+  position: absolute;
+  text-decoration: none;
+  top: 60%;
+  left: 50%;
+  color: white;
+  font-size: 25px;
+  font-family: 'Rock Salt', cursive;
+}
+
+.home-title-link-four:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  color: black;
+}
+
+.home-title-link-five {
+  position: absolute;
+  text-decoration: none;
+  top: 65%;
+  left: 50%;
+  color: white;
+  font-size: 25px;
+  font-family: 'Rock Salt', cursive;
+}
+
+.home-title-link-five:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  color: black;
+}
+
 
 .home-title-span {
   font-family: 'Dawning of a New Day', cursive;
   color: red;
-  font-size: 30px;
-  
+  font-size: 90px;
 }
 
+/* .homepage-hr {
+  position: absolute;
+  top: 350px;
+  border: 1px solid red;
+  width: 90%;
+  margin-left: 5%;
+} */
 
+.titles-container {
+  position: absolute;
+  top: 400px;
+  left: 770px;
+  background-color: red;
+  width: 400px;
+  height: 400px;
+}
+
+nav {
+  position: absolute;
+  top: 950px;
+  left: 1400px;
+  color: red;
+  font-size: 20px;
+  width: 250px;
+  height: 50px;
+  font-size: 30px;
+  background-color: black;
+  text-align: center;
+  padding-top: 3px;
+  /* border: 3px solid white; */
+  font-family: 'Rock Salt', cursive;
+}
+
+nav:hover {
+  color: white;
+  transform: scale(1.2);
+}
 /* // */
 
-.container-holder {
+/* .container-holder {
   display: flex;
   flex-direction: row;
   
-}
+} */
 
-img {
+/* img {
   max-width: 100%;
   display: flex;
   min-height: 400px;
  
-}
+} */
 
 
 /* .container {
@@ -67,6 +175,8 @@ img {
   max-width: 550px;
   max-height: 400px;
 } */
+
+/* //Paintings page */
 
 .box {
   display: flex;
@@ -79,50 +189,37 @@ img {
   padding: 40px;
 }
 
-h1 {
-  font-size: 500;
-}
+
 
 
 /* //index */
 
 .painting-title {
-  color: gold;
+  color: white;
   font-size: 15px;
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 30px;
+  margin: 20px auto; 
+  /* text-transform: uppercase; */
   font-family: 'Cinzel', serif;
 }
 
 .painting-details {
-  color: gold;
-}
-
-
-
-.painting-author {
+  color: white;
+  margin: 30px auto;
+  font-weight: 700;
   
 }
-.painting-year {
 
-}
-
-
-.show-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.show-img {
-  float: left;
-}
-
-.painting-body {
+.painting-author {
+  font-size: 45px;
   color: white;
+  font-family: 'Dawning of a New Day', cursive;
+}
+.painting-year {
+  font-weight: 900;
   font-family: 'Rock Salt', cursive;
 }
-
-
-
-
 
 /* carousel  */
 body {
@@ -145,7 +242,6 @@ img {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  
   max-height: 400px;
   width: auto;
 }
@@ -207,6 +303,7 @@ img {
 .index-image {
   display: flex;
   justify-content: center;
+  
   /* width: auto; */
 }
 
@@ -216,5 +313,42 @@ img {
 }
 
 
+/* //show paintings page */
 
+.show-container {
+  /* display: flex; */
+  /* flex-direction: column;
+  flex-wrap: wrap; */
+  padding-top: 100px;
+  max-height: 400px;
+  width: 700px;
+  text-align: center;
+  margin: 0 auto;
+}
 
+.show-body-container {
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 400px;
+  width: auto; */
+}
+
+.show-painting-body {
+  color: white;
+  font-family: 'Rock Salt', cursive;
+}
+
+.show-info {
+  /* display: flex;
+  flex-direction: column; */
+  color: white;
+}
+
+.show-img {
+  float: left;
+}
+
+.show-page-link {
+  color: white;
+}

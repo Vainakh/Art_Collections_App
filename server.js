@@ -9,7 +9,7 @@ const db = mongoose.connection;
 require("dotenv").config()
 const {
   Painting,
-  Statues 
+  Abstract 
 } = require("./models/paintings")
 //___________________
 //Port
@@ -72,7 +72,7 @@ app.get("/", (req, res) => {
 //   });
 // });
 
-// 2 index/show route
+// 2 index/show route paintings
 app.get("/paintings", (req, res) => {
   Painting.find((error, data) => {
     
@@ -80,7 +80,7 @@ app.get("/paintings", (req, res) => {
       console.log(error)
     } else {
       res.render(
-        "index.ejs",
+        "paintings.ejs",
         {
           paintings:data
         }
@@ -89,23 +89,26 @@ app.get("/paintings", (req, res) => {
   })
 });
 
-app.get("/statues", (req, res) => {
-  Statues.find((error, data) => {
+//2 index/show route abstracts
+app.get("/abstracts", (req, res) => {
+  Abstract.find((error, data) => {
     
     if(error){
       console.log(error)
     } else {
       res.render(
-        "statues.ejs",
+        "abstracts.ejs",
         {
-          statues:data
+          abstracts:data
         }
       )
     }
   })
 });
 
-//3 new route
+
+
+//3 new route paintings
 app.get("/paintings/new", (req, res) => {
   res.render("new.ejs");
 });
@@ -113,9 +116,25 @@ app.get("/paintings/new", (req, res) => {
 app.get("/paintings/:id", (req, res) => {
   Painting.findById(req.params.id, (err, data) => {
       res.render(
-        "show.ejs",
+        "showPaintings.ejs",
         {
           painting: data
+        }
+      )
+  });
+});
+
+//4 new route abstracts
+app.get("/abstracts/new", (req, res) => {
+  res.render("new.ejs");
+});
+
+app.get("/abstracts/:id", (req, res) => {
+  Abstract.findById(req.params.id, (err, data) => {
+      res.render(
+        "showAbstracts.ejs",
+        {
+          abstract: data
         }
       )
   });
@@ -185,7 +204,7 @@ app.get("/paintings/:id", (req, res) => {
 //   }
 // })
 
-//seed one 
+//seed one  paintings
 
 // app.get('/seed', async (req, res) => {
 //   const newPaintings =
@@ -202,6 +221,29 @@ app.get("/paintings/:id", (req, res) => {
 //   try {
 //     const seedPaintings = await Painting.create(newPaintings)
 //     res.send(seedPaintings)
+//   } catch (err) {
+//     res.send(err.message)
+//   }
+// })
+
+
+//seed one  abstracts
+
+// app.get('/seed', async (req, res) => {
+//   const newAbstracts =
+//     [
+//         {
+//           title: "Four Darks in Red",
+//           author: "Mark Rothko",
+//           year: 1958,
+//           imageURL:  "https://d1dzh206jt2san.cloudfront.net/posts-content-images/1518760299sBtJ4.jpg",
+//           body: "The art of Mark Rothko is usually linked to the color field painting. Very similar to abstract expressionism, color field painting was popularized by Rothko’s practice to observe color just as an instrument. Rothko used colors as instruments for expressing emotions, but also for other subjects. However, it’s also important to mention Rothko’s famous “mythomorphic” abstractionism. In the core of this style was presentation of archaic forms and symbols as subject matter."
+//         } 
+//     ]
+
+//   try {
+//     const seedAbstracts = await Abstract.create(newAbstracts)
+//     res.send(seedAbstracts)
 //   } catch (err) {
 //     res.send(err.message)
 //   }

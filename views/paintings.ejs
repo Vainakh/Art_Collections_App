@@ -7,19 +7,19 @@
   <div class="container">
 
     <ul>
-      <% for(let i = 0; i < statues.length; i++){ %>
+      <% for(let i = 0; i < paintings.length; i++){ %>
         <div class="mySlides">
           <li class="box">
   
-            <h3 class="painting-title">"<%=statues[i].title%>"</h3> 
+            <h3 class="painting-title">"<%=paintings[i].title%>"</h3> 
             
             <div>
-              <a class="index-image" href="/statues/<%=statues[i].id%>">
-                <img class="image" src="<%=statues[i].imageURL%>" alt=""> 
+              <a class="index-image" href="/paintings/<%=paintings[i].id%>">
+                <img class="image" src="<%=paintings[i].imageURL%>" alt=""> 
              </a>
             </div>
-              
-             <h5 class="painting-details"> <span class="painting-author"><%=statues[i].author%></span> c. <span class="painting-year"> <%=statues[i].year%></span> </h5>
+            
+             <h5 class="painting-details"> <span class="painting-author"><%=paintings[i].author%></span> <br> <span class="painting-year"> <%=paintings[i].year%></span> </h5>
  
          </li>
         </div> 
@@ -30,8 +30,8 @@
 
   </div>
   
-    <!-- used as a source -->
-  <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_gallery -->
+    
+
   
 <!--   
   <h2 style="text-align:center">Slideshow Gallery</h2>
@@ -114,3 +114,28 @@
 
     
 
+<!-- 
+<head>
+  <%- include ('partials/head.ejs') %>
+  <title>Index</title>
+</head>
+<body>
+  <div class="container-holder">
+    <ul class="container">
+      <% for(let i = 0; i < paintings.length; i++){ %>
+        <li class="box">
+  
+           <h3 class="painting-title">"<%=paintings[i].title%>"</h3> 
+          
+            <a href="/paintings/<%=paintings[i].id%>">
+               <img src="<%=paintings[i].imageURL%>" alt=""> 
+            </a> 
+            <h5 class="painting-details"> <span class="painting-author"><%=paintings[i].author%></span> c. <span class="painting-year"> <%=paintings[i].year%></span> </h5>
+
+        </li>
+    <% } %>
+    </ul>
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+  </div> -->
