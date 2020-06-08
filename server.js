@@ -6,9 +6,14 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express();
 const db = mongoose.connection;
-const userController = require('./controllers/users_controller.js')
+const userController = require('./controllers/users_controller.js');
+const paintingController = require('./controllers/paintings_controller.js');
+const abstractController = require('./controllers/abstracts_controller');
 const bodyParser = require("body-parser");
 const session = require('express-session');
+
+const sessionsController = require('./controllers/sessions_controller.js')
+
 
 require("dotenv").config()
 const {
@@ -60,13 +65,18 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //use method user_controller
 app.use('/users', userController)
+app.use('/abstracts', abstractController)
+//use method painting_controller
+app.use('/paintings', paintingController)
 // use method body-parser
+
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({
   extended: true
 }))
 
+app.use('/sessions', sessionsController)
 
 //___________________
 // Routes
@@ -74,9 +84,16 @@ app.use(bodyParser.urlencoded({
 //1 home route
 
 app.get("/", (req, res) => {
-  res.render("home.ejs")
+  console.log(req.session)
+  console.log(req.session.currentUser)
+  const userName = { username: req.session.currentUser}
+  res.render("home.ejs", 
+  {
+    currentUser: userName
+  })
   // res.redirect("/paintings");
 });
+
 
 //6 edit route
 // app.get('/logs/edit/:id', (req, res) => {
@@ -94,149 +111,149 @@ app.get("/", (req, res) => {
 
 
 // 7 put/edit paintings route
-app.get("/paintings/:id/edit", (req, res) => {
-  console.log("Goodbuy!")
-  const id = req.params.id
-  console.log(id)
-  res.render("editPaintings.ejs",
-    {
-      painting: id
-    }
-  );
-});
+// app.get("/paintings/:id/edit", (req, res) => {
+//   console.log("Goodbuy!")
+//   const id = req.params.id
+//   console.log(id)
+//   res.render("editPaintings.ejs",
+//     {
+//       painting: id
+//     }
+//   );
+// });
 
 
-app.put('/paintings/:id/edit', (req, res) => {
-  console.log("Hello World")
-  Painting.findByIdAndUpdate(req.params.id, req.body, (err, painting) => {
-    console.log(err)
-      //  res.redirect('/paintings')
-      res.redirect("/paintings")
-   })
- });
+// app.put('/paintings/:id/edit', (req, res) => {
+//   console.log("Hello World")
+//   Painting.findByIdAndUpdate(req.params.id, req.body, (err, painting) => {
+//     console.log(err)
+//       //  res.redirect('/paintings')
+//       res.redirect("/paintings")
+//    })
+//  });
 
-app.put('/abstracts/:id/edit', (req, res) => {
-  console.log("Hello World")
-  Abstruct.findByIdAndUpdate(req.params.id, req.body, (err, painting) => {
-    console.log(err)
-      //  res.redirect('/abstracts')
-      res.redirect("/abstracts")
-   })
- });
+// app.put('/abstracts/:id/edit', (req, res) => {
+//   console.log("Hello World")
+//   Abstruct.findByIdAndUpdate(req.params.id, req.body, (err, painting) => {
+//     console.log(err)
+//       //  res.redirect('/abstracts')
+//       res.redirect("/abstracts")
+//    })
+//  });
 
- app.get("/abstracts/:id/edit", (req, res) => {
-  console.log("Goodbuy!")
-  const id = req.params.id
-  console.log(id)
-  res.render("editAbstracts.ejs",
-    {
-      abstract: id
-    }
-  );
-});
+//  app.get("/abstracts/:id/edit", (req, res) => {
+//   console.log("Goodbuy!")
+//   const id = req.params.id
+//   console.log(id)
+//   res.render("editAbstracts.ejs",
+//     {
+//       abstract: id
+//     }
+//   );
+// });
 
 
 // 2 index/show route paintings
-app.get("/paintings", (req, res) => {
-  Painting.find((error, data) => {
+// app.get("/paintings", (req, res) => {
+//   Painting.find((error, data) => {
     
-    if(error){
-      console.log(error)
-    } else {
-      res.render(
-        "paintings.ejs",
-        {
-          paintings:data
-        }
-      )
-    }
-  })
-});
+//     if(error){
+//       console.log(error)
+//     } else {
+//       res.render(
+//         "paintings.ejs",
+//         {
+//           paintings:data
+//         }
+//       )
+//     }
+//   })
+// });
 
 
 
-//2 index/show route abstracts
-app.get("/abstracts", (req, res) => {
-  Abstract.find((error, data) => {
+// //2 index/show route abstracts
+// app.get("/abstracts", (req, res) => {
+//   Abstract.find((error, data) => {
     
-    if(error){
-      console.log(error)
-    } else {
-      res.render(
-        "abstracts.ejs",
-        {
-          abstracts:data
-        }
-      )
-    }
-  })
-});
+//     if(error){
+//       console.log(error)
+//     } else {
+//       res.render(
+//         "abstracts.ejs",
+//         {
+//           abstracts:data
+//         }
+//       )
+//     }
+//   })
+// });
 
-app.get("/paintings/new", (req, res) => {
-  console.log("Hello World!")
-  res.render("newPainting.ejs")
-});
+// app.get("/paintings/new", (req, res) => {
+//   console.log("Hello World!")
+//   res.render("newPainting.ejs")
+// });
 
-//3 new route paintings
-app.get("/paintings/new", (req, res) => {
-  res.render("new.ejs");
-});
+// //3 new route paintings
+// app.get("/paintings/new", (req, res) => {
+//   res.render("new.ejs");
+// });
 
-app.get("/paintings/:id", (req, res) => {
-  Painting.findById(req.params.id, (err, data) => {
-      res.render(
-        "showPaintings.ejs",
-        {
-          painting: data
-        }
-      )
-  });
-});
-
-
-
-//4 new route abstracts
-app.get("/abstracts/new", (req, res) => {
-  res.render("new.ejs");
-});
-
-app.get("/abstracts/:id", (req, res) => {
-  Abstract.findById(req.params.id, (err, data) => {
-      res.render(
-        "showAbstracts.ejs",
-        {
-          abstract: data
-        }
-      )
-  });
-});
+// app.get("/paintings/:id", (req, res) => {
+//   Painting.findById(req.params.id, (err, data) => {
+//       res.render(
+//         "showPaintings.ejs",
+//         {
+//           painting: data
+//         }
+//       )
+//   });
+// });
 
 
 
+// //4 new route abstracts
+// app.get("/abstracts/new", (req, res) => {
+//   res.render("new.ejs");
+// });
+
+// app.get("/abstracts/:id", (req, res) => {
+//   Abstract.findById(req.params.id, (err, data) => {
+//       res.render(
+//         "showAbstracts.ejs",
+//         {
+//           abstract: data
+//         }
+//       )
+//   });
+// });
 
 
-// 4 create painting route
 
 
-app.post("/paintings/new/create", (req, res) => {
-  // console.log(req.body)
-  Painting.create(req.body, (error, data) => {
-    console.log(error)
-    res.render("newPainting.ejs")
-    // res.redirect("/paintings/")
-  })
-});
 
-//5 delete painting route
-app.post("/paintings/delete/:id", (req, res) => {
-  console.log(req.params.id)
-  Painting.findByIdAndRemove( req.params.id, (err, painting) => {
-    if(err){
-      console.log(err)
-    } 
-    res.redirect("/paintings");
-  })
-});
+// // 4 create painting route
+
+
+// app.post("/paintings/new/create", (req, res) => {
+//   // console.log(req.body)
+//   Painting.create(req.body, (error, data) => {
+//     console.log(error)
+//     res.render("newPainting.ejs")
+//     // res.redirect("/paintings/")
+//   })
+// });
+
+// //5 delete painting route
+// app.post("/paintings/delete/:id", (req, res) => {
+//   console.log(req.params.id)
+//   Painting.findByIdAndRemove( req.params.id, (err, painting) => {
+//     if(err){
+//       console.log(err)
+//     } 
+//     res.redirect("/paintings");
+//   })
+// });
 
 // app.get("/new", (req, res) => {
 //   res.render("new.ejs");
@@ -336,9 +353,9 @@ app.post("/paintings/delete/:id", (req, res) => {
 
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
-});
+// app.get('/' , (req, res) => {
+//   res.send('Hello World!');
+// });
 
 //___________________
 //Listener

@@ -1,22 +1,24 @@
 <html lang="en">
 <head>
   <%- include ('partials/head.ejs') %>
+  
   <title>Home</title>
 </head>
 <body>
+  
   <nav class="homepage-nav">
-    
-    <form action="/users/new" method="GET">
+    <%- include ('partials/nav.ejs') %>
+    <!-- <form action="/users/new" method="GET">
       <button class="create-new-painting-btn"> Log In</button>
-    </form> 
-    
-    
-      <form action="/paintings/new" method="GET">
-        <button class="create-new-painting-btn"> Create a New Painting</button>
-      </form>
-    
-
+    </form>  -->
   </nav>
+  <div class="homepage-nav">
+      <!-- <form action="/paintings/new" method="GET">
+        <button class="create-new-painting-btn"> Create a New Painting</button>
+      </form> -->
+    </div>
+
+  
 
   <div">
     <h1 class="home-title"><span class="home-title-span">Art </span>Depot</h1>
