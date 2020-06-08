@@ -474,7 +474,7 @@ img {
 .right {
   list-style: none;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: space-between;
   padding-top: 30px;
   transform: scale(1.2);
@@ -490,7 +490,8 @@ img {
   font-size: 15px;
   padding-top: 3px;
   color:red;
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-left: -190px;
 }
 
 .sign-up-a {

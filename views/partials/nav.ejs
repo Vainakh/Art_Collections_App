@@ -3,6 +3,8 @@
   <% if (currentUser.username) { %>
   <li>Welcome <%= currentUser.username.username %></li>
   <li>
+    <br>
+    <br>
     <form action="/sessions?_method=DELETE" method="POST">
       <input type="submit" value="Log Out" class="log-out-btn" />
     </form>
