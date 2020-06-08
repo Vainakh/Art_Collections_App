@@ -15,7 +15,7 @@ body {
 
 .home-title {
   position: absolute;
-  top: 5%;
+  top: 0%;
   left: 5%;
   color: white;
   font-size: 70px;
@@ -205,9 +205,16 @@ nav:hover {
 /* //index */
 
 .logo {
-  border: 3px solid red;
-  width: 200px;
-  height: 200px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  /* border: 3px solid red; */
+  width: 250px;
+  height: 250px;
+  /* background-image: url(../images/kindpng_1843227.png);
+  z-index: 3; */
+  /* background-color: red; */
+  transform: scale(1.5);
 }
 
 .painting-title {
