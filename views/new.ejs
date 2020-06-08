@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('partials/head.ejs') %>
+
+  </head>
+  <body>
+   
+        <form action="/users/register" method="POST">
+          <!-- fieldset for account info -->
+          <fieldset>
+            <!-- legend for account info -->
+            <legend>ACCOUNT INFORMATION</legend>
+            <!-- username -->
+            <label for="username">USERNAME</label>
+            <input id="username" type="text" name="username" value="username" />
+            <!-- password -->
+            <label for="password">PASSWORD</label>
+            <input id="password" type="password" name="password" />
+          </fieldset>
+          
+          <input type="submit" />
+        </form>
+      
+  </body>
+</html>
+
