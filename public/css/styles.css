@@ -204,6 +204,12 @@ nav:hover {
 
 /* //index */
 
+.logo {
+  border: 3px solid red;
+  width: 200px;
+  height: 200px;
+}
+
 .painting-title {
   color: white;
   font-size: 15px;
@@ -400,6 +406,7 @@ img {
 
 .edit-painting-btn {
   /* padding: 5px 30px; */
+  background-color: white;
   font-family: 'Rock Salt', cursive;
   width: 110px;
   height: 53px;
@@ -408,7 +415,7 @@ img {
   text-decoration: none;
   font-size: 15px;
   padding-top: 3px;
-  color:red;
+  color:black;
 }
 
 
@@ -467,8 +474,9 @@ img {
 .right {
   list-style: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  padding-top: 30px;
   transform: scale(1.2);
 }
 
@@ -482,9 +490,10 @@ img {
   font-size: 15px;
   padding-top: 3px;
   color:red;
+  margin-top: 20px;
 }
 
-.sign-up {
+.sign-up-a {
  
   font-family: 'Rock Salt', cursive;
   width: 110px;
@@ -495,10 +504,10 @@ img {
   font-size: 15px;
   padding-top: 3px;
   color:red;
-  
+  transform: scale(1.3)
 }
 
-.log-in {
+.log-in-a {
   font-family: 'Rock Salt', cursive;
   width: 110px;
   height: 53px;
@@ -521,43 +530,77 @@ img {
   font-size: 15px;
   padding-top: 22px;
   color:white;
+  
 }
 
-/* //new log in */
+/* //new log in  and sign up*/
 
-.new-body {
-  width:100%;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sessions-form {
+.sessions-form-signup{
   /* display: flex;
   flex-direction: column; */
   color:red;
+  font-family: 'Rock Salt', cursive;
+  width: 60%;
+  align-items: center;
+  padding-left: 44%;
+  padding-top: 15%;
+}
+
+
+.sessions-form-login{
+  /* display: flex;
+  flex-direction: column; */
+  color:red;
+  font-family: 'Rock Salt', cursive;
+  width: 60%;
+  align-items: center;
+  padding-left: 44%;
+  padding-top: 15%;
 }
 
 .fieldset {
   display: flex;
   flex-direction: column;
   color:red;
-  width:100%;
-  height: 500px;
+  width:700px;
+  height: 700px;
+  align-items: center;
+  padding: 50px;
 }
 
 .legend-acct-info {
   color: red;
+  align-items: center;
 }
 
 .login-submit-btn {
   font-family: 'Rock Salt', cursive;
-  width: 110px;
+  width: 180px;
   height: 53px;
   text-align: center;
-  /* border: 3px solid red; */
+  
+  border: 3px solid white;
   text-decoration: none;
-  font-size: 15px;
-  padding-top: 3px;
-  color:red;
+  font-size: 20px;
+  padding-bottom: 10px;
+  color:black;
+  background-color: red;
+  margin: 50px;
+  margin-left: 55px;
+}
+
+.signup-submit-btn {
+  font-family: 'Rock Salt', cursive;
+  width: 180px;
+  height: 53px;
+  text-align: center;
+  
+  border: 3px solid white;
+  text-decoration: none;
+  font-size: 20px;
+  padding-bottom: 10px;
+  color:black;
+  background-color: red;
+  margin: 50px;
+  margin-left: 55px;
 }

@@ -2,12 +2,12 @@
 <head>
   <%- include ('partials/head.ejs') %>
 </head>
-<body>
-  <form action="/sessions" method="POST">
+<body class="login-body">
+  <form class="sessions-form-login" action="/sessions" method="POST">
     <!-- fieldset for account info -->
     <fieldset >
       <!-- legend for account info -->
-      <legend >ACCOUNT INFORMATION</legend>
+      <legend class="legend-acct-info">LOG-IN ACCOUNT INFORMATION</legend>
       <!-- username -->
       <label for="username">USERNAME</label>
       <input id="username" type="text" name="username" value="username" />
@@ -16,7 +16,7 @@
       <input id="password" type="password" name="password" />
     </fieldset>
     
-    <input type="submit" />
+    <input class="login-submit-btn" type="submit" />
   </form>
 </body>
 </html>
