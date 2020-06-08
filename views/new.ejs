@@ -5,9 +5,9 @@
     <%- include ('partials/head.ejs') %>
 
   </head>
-  <body>
+  <body class="new-body">
    
-        <form action="/users/register" method="POST">
+        <form class="sessions-form" action="/users/register" method="POST">
           <!-- fieldset for account info -->
           <fieldset>
             <!-- legend for account info -->
@@ -20,7 +20,7 @@
             <input id="password" type="password" name="password" />
           </fieldset>
           
-          <input type="submit" />
+          <input class="login-submit-btn" type="submit" />
         </form>
       
   </body>

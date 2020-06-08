@@ -21,4 +21,6 @@ users.post('/register', (req, res) => {
   })
 })
 
+users.get('/log')
+
 module.exports = users
