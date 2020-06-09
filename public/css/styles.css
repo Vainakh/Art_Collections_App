@@ -16,13 +16,22 @@ body {
 
 .home-title {
   position: absolute;
-  top: 0%;
-  left: 5%;
+  top: -5%;
+  left: 14%;
   color: white;
+  font-size: 130px;
+  /* font-family: 'Rock Salt', cursive; */
+  /* border: 3px solid red; */ 
+  font-family: 'Sacramento', cursive;
+}
+
+.home-title-span {
+  position: absolute;
+  top: 10%;
+  left: -24%;
+  font-family: 'Sacramento', cursive;
+  color: red;
   font-size: 70px;
-  font-family: 'Rock Salt', cursive;
-  /* border: 3px solid red; */
-  
 }
 
 .home-title-link-one {
@@ -124,14 +133,6 @@ body {
   cursor: pointer;
   transform: scale(1.2);
   color: red;
-}
-
-
-.home-title-span {
-  font-family: 'Dawning of a New Day', cursive;
-  color: red;
-  font-size: 120px;
- 
 }
 
 .homepage-hr {
