@@ -1,5 +1,8 @@
 <ul class="right">
- 
+  <% if(user){ %>
+    <h6 class="signup-message"><%= user%>, your account has been created! Please, proceed to Log In to your account...</h6>
+  <% } %>
+
   <% if (currentUser.username) { %>
   <li>Welcome <%= currentUser.username.username %></li>
   <li>
@@ -10,8 +13,8 @@
     </form>
   </li>
   <% } else { %>
-  <li ><a class="sign-up-a" href="/users/new">Sign Up</a></li>
+  <li class="sign-up-li"><a class="sign-up-a" href="/users/new">Sign Up</a></li>
   <li class="separation">/</li>
-  <li><a class="log-in-a" href="/sessions/new">Log In</a></li>
+  <li class="log-in-li"><a class="log-in-a"  href="/sessions/new">Log In</a></li>
   <% } %>
 </ul>

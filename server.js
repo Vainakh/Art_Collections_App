@@ -89,7 +89,8 @@ app.get("/", (req, res) => {
   const userName = { username: req.session.currentUser}
   res.render("home.ejs", 
   {
-    currentUser: userName
+    currentUser: userName,
+    user: false
   })
   // res.redirect("/paintings");
 });

@@ -58,6 +58,18 @@ abstracts.get("/:id", (req, res) => {
   });
 });
 
+//5 delete painting route
+abstracts.post("/delete/:id", (req, res) => {
+  console.log(req.params.id)
+  Abstract.findByIdAndRemove( req.params.id, (err, abstract) => {
+    if(err){
+      console.log(err)
+    } 
+    res.redirect("/abstracts");
+  })
+});
+
+
 
 
 module.exports = abstracts;

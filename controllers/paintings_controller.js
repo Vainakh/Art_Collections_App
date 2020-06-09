@@ -56,7 +56,8 @@ paintings.get("/:id", (req, res) => {
       res.render(
         "showPaintings.ejs",
         {
-          painting: data
+          painting: data,
+          user: req.session.currentUser
         }
       )
   });

@@ -19,12 +19,13 @@
      
   
       <br>
-  
+      
       <div class="show-body-container">
         <span class="show-painting-body"><%=painting.body%></span> 
       </div>
       
      
+      <% if(user){ %>
     <div class="show-page-btns">
       <form action="/paintings/delete/<%=painting.id; %>" method="POST">
         <button class="delete-painting-btn" type="submit">Delete</button>
@@ -33,7 +34,7 @@
       <a class="edit-painting-btn" href="/paintings/<%=painting.id%>/edit">Edit</a>
       </div>
     </div> 
-      
+     <% } %> 
     <a class="show-page-link" href="/paintings">Back to Paintings</a>
   </div>
   

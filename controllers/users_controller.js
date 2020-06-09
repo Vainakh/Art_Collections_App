@@ -11,13 +11,18 @@ users.get('/new', (req, res) => {
 
 users.post('/register', (req, res) => {
   console.log(req);
-  console.log("Hello World")
   //overwrite the user password with the hashed password, then pass that in to our database
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
   User.create(req.body, (err, createdUser) => {
     req.session.isLoggedIn = true;
-    console.log('user is created', createdUser)
-    res.redirect('/')
+    console.log('user is created', req.body.username)
+    
+    res.render('home.ejs', 
+      {
+        user: req.body.username,
+        currentUser: false
+      }
+    )
   })
 })
 
