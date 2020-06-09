@@ -684,3 +684,35 @@ img {
     font-size: 15px;
     color: white;
 }
+
+
+/* //footer */
+
+.footer-title {
+  position: absolute;
+  top: 90%;
+  left: 80%;
+  color: white;
+  font-size: 30px;
+  /* font-family: 'Rock Salt', cursive; */
+  /* border: 3px solid red; */ 
+  font-family: 'Sacramento', cursive;
+}
+
+.footer-title-span {
+  position: absolute;
+  top: 0%;
+  left: -24%;
+  font-family: 'Sacramento', cursive;
+  color: red;
+  font-size: 30px;
+}
+
+
+.footer-title-span-1 {
+  color: red;
+}
+
+h6.footer-up-span-1 {
+  color: red;
+}
