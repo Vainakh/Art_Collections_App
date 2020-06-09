@@ -2,17 +2,14 @@
 //Dependencies
 //___________________
 const express = require('express');
-const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const session = require('express-session');
+const methodOverride  = require('method-override');
+const bodyParser = require("body-parser");
 const app = express();
 const db = mongoose.connection;
-const userController = require('./controllers/users_controller.js');
-const paintingController = require('./controllers/paintings_controller.js');
-const abstractController = require('./controllers/abstracts_controller');
-const bodyParser = require("body-parser");
-const session = require('express-session');
 
-const sessionsController = require('./controllers/sessions_controller.js')
+
 
 
 require("dotenv").config()
@@ -350,7 +347,10 @@ app.get("/", (req, res) => {
 
 
 
-
+const userController = require('./controllers/users_controller.js');
+const paintingController = require('./controllers/paintings_controller.js');
+const abstractController = require('./controllers/abstracts_controller');
+const sessionsController = require('./controllers/sessions_controller.js');
 
 //___________________
 //localhost:3000
