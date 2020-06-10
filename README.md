@@ -38,7 +38,7 @@ POST, GET, PUT, and DELETE requests let us construct Rest APIs.
   
 ## Unsolved Problems/ToDo's
 
-1. Front end features are required such as nav  and footer need to be added
+1. Front end features such as nav  and footer need to be added
 2. Additional models need to be added
 3. UX features to expand interactivity need to be added 
 
