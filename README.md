@@ -4,7 +4,7 @@
 
 
 # Project link:
- [ArtCollections...](https://artdepot.herokuapp.com/) 
+ [ArtCollections...](https://artcollections.herokuapp.com/) 
 
 
 ## Project Description

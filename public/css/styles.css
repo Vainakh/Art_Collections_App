@@ -716,3 +716,8 @@ img {
 h6.footer-up-span-1 {
   color: red;
 }
+
+.password-not-matched {
+  color: red;
+  font-family: 'Sacramento', cursive;
+}
